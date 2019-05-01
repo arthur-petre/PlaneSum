@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         final Time temps = new Time(0, 0);
         Button mAjouter = findViewById(R.id.buttonAdd);
         Button mReset = findViewById(R.id.buttonReset);
-        metHours.requestFocus();
-
         mAjouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (! (metHours.getText().toString().equals("") && metMinutes.getText().toString().equals(""))) {
                     temps.normaliser();
-                    Check = "Last : " + metHours.getText().toString() + " h. " + metMinutes.getText().toString() + " m." + "\n" + "Nombre d'heures : " + cpt + "\n" + "\n" + "Total : " + temps.getmyHours() + " h. " + temps.getmyMinutes() + " m.";
+                    Check = "Dernier temps : " + metHours.getText().toString() + " h. " + metMinutes.getText().toString() + " m." + "\n" + "Nombre de temps : " + cpt + "\n" + "\n" + "Total : " + temps.getmyHours() + " h. " + temps.getmyMinutes() + " m.";
                     mtxCheck.setText(Check);
                     metHours.setText("");
                     metMinutes.setText("");

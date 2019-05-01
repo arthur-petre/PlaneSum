@@ -7,7 +7,7 @@ public class Time {
     private int myHours;
     private int myMinutes;
 
-    private void normaliser() {
+    public void normaliser() {
         this.myHours += (this.myMinutes / 60);
         this.myMinutes = (this.myMinutes % 60);
     }

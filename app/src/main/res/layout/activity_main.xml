@@ -10,74 +10,77 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="5dp"
-        android:layout_toStartOf="@+id/buttonResults"
-        android:layout_toEndOf="@+id/buttonReset"
-        android:text="Ajouter temps" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="50dp"
+        android:text="Ajouter temps"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonReset"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="275dp"
-        android:text="Reset" />
-
-    <Button
-        android:id="@+id/buttonResults"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="275dp"
-        android:layout_marginEnd="10dp"
-        android:text="Résultat" />
-
-    <EditText
-        android:id="@+id/editTextHours"
-        android:maxLength="2"
-        android:layout_width="85dp"
-        android:layout_height="65dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="150dp"
-        android:inputType="numberSigned" />
-
-    <EditText
-        android:id="@+id/editTextMinutes"
-        android:maxLength="2"
-        android:layout_width="85dp"
-        android:layout_height="65dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="90dp"
-        android:inputType="numberSigned" />
-
-    <TextView
-        android:id="@+id/textViewResults"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="275dp"
+        android:text="Reset"
+        tools:ignore="HardcodedText" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_hours"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="125dp"
-        android:textAlignment="center"
-        android:textSize="25sp" />
+        android:layout_marginTop="150dp">
+
+        <EditText
+            android:id="@+id/editTextHours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Heures"
+            android:inputType="numberSigned"
+            android:maxLength="2"
+            android:autofillHints=""
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_minutes"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="100dp">
+
+        <EditText
+            android:id="@+id/editTextMinutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Minutes"
+            android:inputType="numberSigned"
+            android:maxLength="2"
+            android:autofillHints=""
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+
+    </android.support.design.widget.TextInputLayout>
 
     <TextView
         android:id="@+id/textViewCheck"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"

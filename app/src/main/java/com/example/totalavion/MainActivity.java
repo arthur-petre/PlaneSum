@@ -19,25 +19,33 @@ public class MainActivity extends AppCompatActivity {
 
         final EditText metHours = findViewById(R.id.editTextHours);
         final EditText metMinutes = findViewById(R.id.editTextMinutes);
-        final TextView mtxResults = findViewById(R.id.textViewResults);
         final TextView mtxCheck = findViewById(R.id.textViewCheck);
         final Time temps = new Time(0, 0);
-        Button mResults = findViewById(R.id.buttonResults);
         Button mAjouter = findViewById(R.id.buttonAdd);
         Button mReset = findViewById(R.id.buttonReset);
+        metHours.requestFocus();
 
         mAjouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!(metHours.getText().toString().equals("") || metMinutes.getText().toString().equals(""))) {
+                if (metHours.getText().toString().equals("") && !(metMinutes.getText().toString().equals(""))) {
                     cpt = cpt + 1;
-                    Check = "Last : " + metHours.getText().toString() + " h.  " + metMinutes.getText().toString() + " m." + "\n" + cpt;
-                    //Check = "Last : " + metHours.getText().toString() + " h.  " + metMinutes.getText().toString() + " m." + "\n" + cpt + "\n" + "\n" + "Total : " + temps.getmyHours() + " h.  " + temps.getmyMinutes() + " m.";
+                    temps.addmyMinutes(Integer.parseInt(metMinutes.getText().toString()));
+                } else if (metMinutes.getText().toString().equals("") && !(metHours.getText().toString().equals(""))) {
+                    cpt = cpt + 1;
+                    temps.addmyHours(Integer.parseInt(metHours.getText().toString()));
+                } else if (!(metHours.getText().toString().equals("") || metMinutes.getText().toString().equals(""))) {
+                    cpt = cpt + 1;
                     temps.addmyHours(Integer.parseInt(metHours.getText().toString()));
                     temps.addmyMinutes(Integer.parseInt(metMinutes.getText().toString()));
+                }
+                if (! (metHours.getText().toString().equals("") && metMinutes.getText().toString().equals(""))) {
+                    temps.normaliser();
+                    Check = "Last : " + metHours.getText().toString() + " h. " + metMinutes.getText().toString() + " m." + "\n" + "Nombre d'heures : " + cpt + "\n" + "\n" + "Total : " + temps.getmyHours() + " h. " + temps.getmyMinutes() + " m.";
                     mtxCheck.setText(Check);
                     metHours.setText("");
                     metMinutes.setText("");
+                    metHours.requestFocus();
                 }
             }
         });
@@ -45,21 +53,13 @@ public class MainActivity extends AppCompatActivity {
         mReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cpt = 0;
                 temps.setmyHours(0);
                 temps.setmyMinutes(0);
                 metHours.setText("");
                 metMinutes.setText("");
-                mtxResults.setText("");
+                mtxCheck.setText("");
             }
         });
-
-        mResults.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mRslt = temps.getmyHours() + " h.  " + temps.getmyMinutes() + " m.";
-                mtxResults.setText(mRslt);
-            }
-        });
-
     }
 }

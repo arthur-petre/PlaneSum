@@ -1,6 +1,4 @@
-package com.example.totalavion;
-
-import android.widget.TextView;
+package com.example.planesum;
 
 public class Time {
 

@@ -15,14 +15,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         final EditText metHours = findViewById(R.id.editTextHours);
         final EditText metMinutes = findViewById(R.id.editTextMinutes);
         final TextView mtxCheck = findViewById(R.id.textViewCheck);
         final Time temps = new Time(0, 0);
-        Button mAjouter = findViewById(R.id.buttonAdd);
+        Button mAdd = findViewById(R.id.buttonAdd);
         Button mReset = findViewById(R.id.buttonReset);
-        mAjouter.setOnClickListener(new View.OnClickListener() {
+        mAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (metHours.getText().toString().equals("") && !(metMinutes.getText().toString().equals(""))) {
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     temps.addmyHours(Integer.parseInt(metHours.getText().toString()));
                     temps.addmyMinutes(Integer.parseInt(metMinutes.getText().toString()));
                 }
-                if (! (metHours.getText().toString().equals("") && metMinutes.getText().toString().equals(""))) {
+                if (!(metHours.getText().toString().equals("") && metMinutes.getText().toString().equals(""))) {
                     temps.normaliser();
                     Check = "Dernier temps : " + metHours.getText().toString() + " h. " + metMinutes.getText().toString() + " m." + "\n" + "Nombre de temps : " + cpt + "\n" + "\n" + "Total : " + temps.getmyHours() + " h. " + temps.getmyMinutes() + " m.";
                     mtxCheck.setText(Check);
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         mReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

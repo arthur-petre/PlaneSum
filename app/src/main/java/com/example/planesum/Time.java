@@ -5,37 +5,37 @@ public class Time {
     private int myHours;
     private int myMinutes;
 
-    public void normaliser() {
+    protected Time(int h, int m) {
+        this.myMinutes = m;
+        this.myHours = h;
+    }
+
+    protected void normaliser() {
         this.myHours += (this.myMinutes / 60);
         this.myMinutes = (this.myMinutes % 60);
     }
 
-    public Time(int h, int m) {
-        this.myMinutes = m;
+    protected void setmyHours(int h) {
         this.myHours = h;
     }
 
-    public void setmyHours(int h) {
-        this.myHours = h;
-    }
-
-    public void setmyMinutes(int m) {
+    protected void setmyMinutes(int m) {
         this.myMinutes = m;
     }
 
-    public void addmyHours(int h) {
+    protected void addmyHours(int h) {
         this.myHours += h;
     }
 
-    public void addmyMinutes(int m) {
+    protected void addmyMinutes(int m) {
         this.myMinutes += m;
     }
 
-    public int getmyHours() {
+    protected int getmyHours() {
         return this.myHours;
     }
 
-    public int getmyMinutes() {
+    protected int getmyMinutes() {
         return this.myMinutes;
     }
 

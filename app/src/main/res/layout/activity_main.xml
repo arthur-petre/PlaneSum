@@ -34,18 +34,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="150dp"
+        android:focusableInTouchMode="true">
 
         <EditText
             android:id="@+id/editTextHours"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
+            android:autofillHints=""
             android:hint="Heures"
             android:inputType="numberSigned"
             android:maxLength="2"
-            android:autofillHints=""
             tools:ignore="HardcodedText"
             tools:targetApi="o" />
 
@@ -59,18 +58,17 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="150dp"
-        android:layout_marginEnd="100dp">
+        android:layout_marginEnd="100dp"
+        android:focusableInTouchMode="true">
 
         <EditText
             android:id="@+id/editTextMinutes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
+            android:autofillHints=""
             android:hint="Minutes"
             android:inputType="numberSigned"
             android:maxLength="2"
-            android:autofillHints=""
             tools:ignore="HardcodedText"
             tools:targetApi="o" />
 

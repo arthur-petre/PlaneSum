@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         mAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (metHours.getText().toString().equals("") && !(metMinutes.getText().toString().equals(""))) {
+                if (metHours.getText().toString().contains("+") || metHours.getText().toString().contains("-") || metMinutes.getText().toString().contains("+") || metMinutes.getText().toString().contains("-")) {
+                    metHours.setText("");
+                    metMinutes.setText("");
+                } else if (metHours.getText().toString().equals("") && !(metMinutes.getText().toString().equals(""))) {
                     cpt = cpt + 1;
                     temps.addmyMinutes(Integer.parseInt(metMinutes.getText().toString()));
                 } else if (metMinutes.getText().toString().equals("") && !(metHours.getText().toString().equals(""))) {

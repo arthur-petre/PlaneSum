@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     int cpt = 0;
-    String mRslt = "";
     String Check = "";
 
     @Override

@@ -1,5 +1,5 @@
-#ifndef DUREE_H
-#define DUREE_H
+#ifndef TIME_H
+#define TIME_H
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -25,4 +25,4 @@ public:
     void display();
 };
 
-#endif // DUREE_H
+#endif // TIME_H
